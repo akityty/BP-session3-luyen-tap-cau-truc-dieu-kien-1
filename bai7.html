@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--Phí thuê bao bắt buộc là 25 nghìn.-->
+<!--600 đồng cho mỗi gọi của 50 phút đầu tiên.-->
+<!--400 đồng cho mỗi phút gọi của 150 phút tiếp theo.-->
+<!--200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.-->
+<p id = "time"></p>
+<br>
+<p id = "tien"></p>
+<script>
+    let count =  parseInt(prompt("nhập tổng số cuộc gọi trong tháng: "));
+    let time = [];
+    let data="";
+    let x=null;
+    for(let i =0;i<count;i++){
+       time.push(parseInt(prompt("cuộc "+(i+1)+": ")));
+        data+= "\n cuộc "+(i+1)+": "+time[i]+" phút.";
+    }
+    document.getElementById("time").innerText = "thời gian gọi tháng này là: "+data;
+    tinhTien();
+    function tinhTien() {
+        let soTien = 25000;
+            for (let i = 0; i < time.length; i++) {
+                if (time[i]>0 && time[i]<=50) {
+                    soTien += time[i]*600;
+                }
+                else if(time[i]>50 && time[i]<=200){
+                    soTien += 50*600+ (time[i]-50)*400;
+                }
+                else if(time[i]>200){
+                    soTien += 50*600+ 150*400 + (time[i]-200)*200;
+                }
+            }
+            document.getElementById("tien").innerText = "Tổng Tiền Cước là: "+soTien+ "VND";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    let doanhSo = parseInt(prompt("nhập doanh số bán hàng (triệu đồng)"));
+    let hoaHong = null;
+    if(doanhSo === 0){
+        alert("vô dụng, không biết bán hàng à");
+    }
+    else if(doanhSo>0 && doanhSo<10){
+        hoaHong ="hoa hồng là: "+ 1 +" triêu đồng.";
+        alert(hoaHong+" \n lần sau cố gắng hơn nhé");
+    }
+    else if(doanhSo>10 && doanhSo<50){
+        hoaHong ="hoa hồng là: " +doanhSo*0.1 +" triệu đồng.";
+        alert(hoaHong+"\n bạn làm rất tốt");
+    }
+    else if( doanhSo>50){
+        hoaHong = "hoa hồng là: "+(5+doanhSo*0.1)+" triệu đồng";
+        alert(hoaHong+" \n bạn quả là người bán hàng tài ba");
+    }
+</script>
+</body>
+</html>
